@@ -1,6 +1,6 @@
 Not properly tested yet, though 127.0.0.1 works well.
 
-"server.c" is to be compiled by GCC and run on Linux machine with NVIDIA GPU and CUDA installed.
+"server.c" is to be compiled by GCC and run on Linux machine with NVIDIA GPU and CUDA SDK installed.
 
 "client.c" is to be compiled by CL and run on Windows machine in same network.
 
