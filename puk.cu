@@ -80,10 +80,8 @@ int main(int argc, char **argv)
     cudaMalloc(&_dbuf, sz);
     cudaMemcpy(_dbuf, buf, sz, cudaMemcpyHostToDevice);
 
-    if (argc == 1)
-        puk<<<0x100, 0x100>>>(_dbuf + off, _sbuf + off, wid, hei);
-    else
-        unpuk<<<0x100, 0x100>>>(_dbuf + off, _sbuf + off, wid, hei);
+    if (argc == 1) puk<<<0x100, 0x100>>>(_dbuf + off, _sbuf + off, wid, hei);
+              else unpuk<<<0x100, 0x100>>>(_dbuf + off, _sbuf + off, wid, hei);
     cudaDeviceSynchronize();
 
     cudaMemcpy(buf, _dbuf, sz, cudaMemcpyDeviceToHost);
